@@ -44,6 +44,14 @@ ADD CHECK (price_usd/quantity > 0.02 AND price_usd/quantity < 25);
 
 // Adding a constraint to ensure that we don’t have pricing information on parts that aren’t already tracked in our DB schema:
 
+ALTER TABLE parts
+ADD PRIMARY KEY (id);
+
+ALTER TABLE reorder_options
+ADD FOREIGN KEY (part_id)
+REFERENCES parts (id);
+
+
 
 
 
