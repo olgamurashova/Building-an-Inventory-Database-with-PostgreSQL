@@ -51,6 +51,15 @@ ALTER TABLE reorder_options
 ADD FOREIGN KEY (part_id)
 REFERENCES parts (id);
 
+// Adding a constraint in the locations table that ensures that each value in qty is greater than 0:
+
+ALTER TABLE locations
+ADD CHECK (quantity > 0);
+
+// Ensuring that locations records only one row for each combination of location and part:
+
+
+
 
 
 
