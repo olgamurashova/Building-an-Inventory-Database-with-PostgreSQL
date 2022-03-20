@@ -58,6 +58,12 @@ ADD CHECK (quantity > 0);
 
 // Ensuring that locations records only one row for each combination of location and part:
 
+ALTER TABLE locations
+ADD UNIQUE (part_id);
+
+ALTER TABLE locations
+ADD UNIQUE (location);
+
 
 
 
